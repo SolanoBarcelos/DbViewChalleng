@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Itens de Solução/">
     <File Path=".gitignore" />
+    <File Path="Readme.md" />
   </Folder>
   <Project Path="DbViewChalleng.Web/DbViewChalleng.Web.csproj" />
   <Project Path="DbViewChallenge.Api/DbViewChallenge.Api.csproj" />
