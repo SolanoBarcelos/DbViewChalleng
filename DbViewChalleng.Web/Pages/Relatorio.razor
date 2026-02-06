@@ -1,0 +1,56 @@
+﻿@page "/"
+@page "/relatorio"
+@using DbViewChalleng.Web.Models
+@inject HttpClient Http
+
+<PageTitle>Relatório de Estoque</PageTitle>
+
+<h1>Relatório</h1>
+<p>Backend faz um select na View do Banco > Transforma o resultado em Json > Expõe uma rota com Json > Frontend consome a rota com os dados Json.</p>
+
+@if (relatorios == null)
+{
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Carregando...</span>
+    </div>
+}
+else if (!relatorios.Any())
+{
+    <div class="alert alert-warning">Nenhum dado encontrado no estoque.</div>
+}
+else
+{
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Descrição da Chapa</th>
+                <th>Peso (kg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in relatorios)
+            {
+                <tr>
+                    <td>@item.ChapaTypeName</td>
+                    <td class="fw-bold text-primary">@item.PesoEspessura.ToString("N4")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<RelatorioPesoViewModel>? relatorios;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            relatorios = await Http.GetFromJsonAsync<List<RelatorioPesoViewModel>>("api/RelatorioPeso");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao buscar dados: {ex.Message}");
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="DbViewChalleng.Web/DbViewChalleng.Web.csproj" />
+  <Project Path="DbViewChallenge.Api/DbViewChallenge.Api.csproj" />
+</Solution>
