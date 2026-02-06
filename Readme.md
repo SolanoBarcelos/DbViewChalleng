@@ -49,7 +49,7 @@ join estoque e on c.pk_chapa_type = e.fk_pk_chapa_type
 
 Api criada em C#, .Net, ASP.NET Core Web API, utilizando Dapper para acessar o banco de dados. 
 Foram utilizados conceitos de Clean Architecture e DDD, Também DIP e SRP do SOLID (Na vida ral utilizária os padroes da empresa)
-Optei por utilizar padrão singleton como tempo de vida do Container de DI para DBcontext, pois a classe fornece apenas o metodo para criar conexão e não armazena dados vindos dos clients. Uma única instância global economiza mémoria. IDbConnection permanece ativo enquando pelo tempo de vida do metodo Repository pelo uso de "using" que fecha a conexão.
+Optei por utilizar padrão singleton como tempo de vida do Container de DI para DBcontext, pois a classe fornece apenas o metodo para criar conexão e não armazena dados vindos dos clients. Uma única instância global economiza mémoria. IDbConnection permanece ativo enquando o tempo de vida do metodo Repository pelo uso de "using" que fecha a conexão.
 
 
 5 - Crie uma tela que leia a rota acima.
