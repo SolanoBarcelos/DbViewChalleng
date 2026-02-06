@@ -47,14 +47,14 @@ join estoque e on c.pk_chapa_type = e.fk_pk_chapa_type
 
 4 - API: Crie uma rota que leia a view acima.
 
-Api criada em C#, .Net, ASP.NET Core Web API, utilizando Dapper para acessar o banco de dados. 
-Foram utilizados conceitos de Clean Architecture e DDD, Também DIP e SRP do SOLID (Na vida ral utilizária os padroes da empresa)
-Optei por utilizar padrão singleton como tempo de vida do Container de DI para DBcontext, pois a classe fornece apenas o metodo para criar conexão e não armazena dados vindos dos clients. Uma única instância global economiza mémoria. IDbConnection permanece ativo enquando o tempo de vida do metodo Repository pelo uso de "using" que fecha a conexão.
+API criada em C#, .Net, ASP.NET Core Web API, utilizando Dapper para acessar o banco de dados. 
+Foram utilizados conceitos de Clean Architecture e DDD, também DIP e SRP do SOLID (na vida real, utilizaria os padrões da empresa).
+Optei por utilizar padrão singleton como tempo de vida do Container de DI para DBcontext, pois a classe fornece apenas o método para criar conexão e não armazena dados vindos dos clients. Uma única instância global economiza memória. IDbConnection permanece ativo enquanto o tempo de vida do método Repository não acabar pelo uso de “using” que fecha a conexão.
 
 
 5 - Crie uma tela que leia a rota acima.
 
-Tela criada Utilizando Blazor.
+Tela criada utilizando Blazor.
 
 Obs: 
 - Utilize um banco de dados relacional da sua escolha (preferência para PostgreSQL). 
