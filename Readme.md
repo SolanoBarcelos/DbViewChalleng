@@ -55,6 +55,8 @@ Optei por utilizar padrão singleton como tempo de vida do Container de DI para D
 5 - Crie uma tela que leia a rota acima.
 
 Tela criada utilizando Blazor.
+Backend faz um select na View do Banco > Transforma o resultado em Json > Expõe uma rota com Json > Frontend consome a rota com os dados Json.
+
 
 Obs: 
 - Utilize um banco de dados relacional da sua escolha (preferência para PostgreSQL). 
